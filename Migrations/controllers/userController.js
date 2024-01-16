@@ -1,6 +1,5 @@
 const {response,request} = require('express');
-// const Conexion = require('./Conexion');
-const Conexion = require('../database/ConexionSequilize')
+const Conexion = require('../database/ConexionSequelize')
 
 const usuariosGet =  (req, res = response) => {
     const conx = new Conexion();
@@ -73,56 +72,10 @@ const usuariosPut =  (req, res = response) => {
         });
 }
 
-// const rolesAsignadosGet =  (req, res = response) => {
-//     const conx = new Conexion();
-
-//     conx.getRolesAsignados()    
-//         .then( msg => {
-//             console.log('Listado correcto!');
-//             res.status(200).json(msg);
-//         })
-//         .catch( err => {
-//             console.log('No hay registros');
-//             res.status(203).json({'msg':'No se han encontrado registros'});
-//         });
-// }
-
-// const rolesAsignadosDNIGet =  (req, res = response) => {
-//     const conx = new Conexion();
-
-//     conx.getRolesAsignadosDNI(req.params.dni)    
-//         .then( msg => {
-//             console.log('Listado correcto!');
-//             res.status(200).json(msg);
-//         })
-//         .catch( err => {
-//             console.log('No hay registros');
-//             res.status(203).json({'msg':'No se han encontrado registros'});
-//         });
-// }
-
-// const rolesGet =  (req, res = response) => {
-//     console.log('Llego aquí.....*')
-//     const conx = new Conexion();
-
-//     conx.getRoles()    
-//         .then( msg => {
-//             console.log('Listado correcto!');
-//             res.status(200).json(msg);
-//         })
-//         .catch( err => {
-//             console.log('No hay registros');
-//             res.status(203).json({'msg':'No se han encontrado registros'});
-//         });
-// }
-
 module.exports = {
     usuariosGet,
     usuariosDelete,
     usuariosPost,
     usuariosPut,
-    usuarioGet,
-    // rolesGet,
-    // rolesAsignadosGet,
-    // rolesAsignadosDNIGet
+    usuarioGet
 }
